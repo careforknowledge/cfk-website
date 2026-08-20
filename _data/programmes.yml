@@ -33,7 +33,7 @@
 - name: "First Essays"
   slug: "first-essays"
   tagline: "A publishing pipeline for undergraduate writers."
-  description: "First Essays helps Nigerian undergraduates discover serious essay writing — from first draft to published work, through editorial feedback and peer review."
+  description: "First Essays is in development — a publishing pipeline for Nigerian undergraduates, taking writers from first draft to published essay through editorial feedback and peer review."
   url: ""
   status: "development"
   icon: "✍️"
