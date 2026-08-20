@@ -7,8 +7,8 @@ baseurl: "/cfk-website"
 
 # Social / contact
 email: "hello@careforknowledge.org"
-twitter_handle: "careforknowledge"
-linkedin: "https://www.linkedin.com/company/careforknowledge"
+twitter_handle: "care4knowledge"
+linkedin: "https://www.linkedin.com/company/care-for-knowledge"
 
 # OG / social defaults
 og_image: "/assets/images/og/og-default.jpg"   # 1200×630 px
