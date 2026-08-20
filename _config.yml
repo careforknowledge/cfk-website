@@ -3,7 +3,7 @@ title: "Care for Knowledge"
 tagline: "Free education for every Nigerian student."
 description: "Care for Knowledge is a Nigerian nonprofit building free educational resources — open textbooks, past questions, civic simulations, and an undergraduate publishing pipeline."
 url: "https://careforknowledge.org"
-baseurl: ""
+baseurl: "/cfk-website"
 
 # Social / contact
 email: "hello@careforknowledge.org"
