@@ -1,0 +1,44 @@
+<footer class="site-footer" role="contentinfo">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <a href="/" class="footer-logo">Care<span>for</span>Knowledge</a>
+      <p class="footer-tagline">Free education for every Nigerian student.<br>Learn. Share. Care. ✦</p>
+    </div>
+    <nav class="footer-nav" aria-label="Footer navigation">
+      <div class="footer-col">
+        <div class="footer-col-heading">Programmes</div>
+        <ul>
+          <li><a href="/programmes/model-nass/">Model NASS</a></li>
+          <li><a href="/programmes/ctri/">CTRI</a></li>
+          <li><a href="/programmes/wikiquestions/">WikiQuestions</a></li>
+          <li><a href="/programmes/fellowship/">CFK Fellowship</a></li>
+          <li><a href="/programmes/first-essays/">First Essays</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-heading">Organisation</div>
+        <ul>
+          <li><a href="/about/">About CFK</a></li>
+          <li><a href="/about/#team">Our Team</a></li>
+          <li><a href="/sprints/">Sprints</a></li>
+          <li><a href="/get-involved/">Get Involved</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-heading">Connect</div>
+        <ul>
+          <li><a href="/contact/">Contact</a></li>
+          <li><a href="/donate/">Donate</a></li>
+          <li><a href="https://fellowship.careforknowledge.org" target="_blank" rel="noopener">Fellowship site</a></li>
+          {% if site.linkedin %}<li><a href="{{ site.linkedin }}" target="_blank" rel="noopener">LinkedIn</a></li>{% endif %}
+        </ul>
+      </div>
+    </nav>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-inner">
+      <p>&copy; {{ 'now' | date: "%Y" }} Care for Knowledge. Registered nonprofit, Nigeria.</p>
+      <p class="footer-legal">Built on GitHub Pages. <a href="/contact/">hello@careforknowledge.org</a></p>
+    </div>
+  </div>
+</footer>

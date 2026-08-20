@@ -1,0 +1,19 @@
+<header class="site-nav" role="banner">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo" aria-label="Care for Knowledge — Home">
+      Care<span>for</span>Knowledge
+    </a>
+    <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="nav-menu">
+      <span></span><span></span><span></span>
+    </button>
+    <nav id="nav-menu" class="nav-menu" role="navigation" aria-label="Main navigation">
+      <ul>
+        <li><a href="/about/" {% if page.url == '/about/' %}aria-current="page"{% endif %}>About</a></li>
+        <li><a href="/programmes/" {% if page.url contains 'programme' %}aria-current="page"{% endif %}>Programmes</a></li>
+        <li><a href="/sprints/" {% if page.url == '/sprints/' %}aria-current="page"{% endif %}>Sprints</a></li>
+        <li><a href="/get-involved/" {% if page.url == '/get-involved/' %}aria-current="page"{% endif %}>Get Involved</a></li>
+        <li><a href="/donate/" class="nav-donate" {% if page.url == '/donate/' %}aria-current="page"{% endif %}>Donate</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>

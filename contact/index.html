@@ -1,0 +1,84 @@
+---
+layout: default
+title: "Contact"
+description: "Get in touch with Care for Knowledge — for partnerships, press enquiries, or general questions about our programmes."
+og_image: "/assets/images/og/og-default.jpg"
+body_class: "page-contact"
+---
+
+<section class="page-hero" aria-labelledby="contact-heading">
+  <div class="inner page-hero-content">
+    <span class="eyebrow eyebrow-cyan">Contact</span>
+    <h1 class="heading-xl light" id="contact-heading" style="max-width:680px; margin-bottom:24px;">
+      We would love<br>to <em>hear from you.</em>
+    </h1>
+    <p class="body-lg light" style="max-width:500px;">
+      Whether you are interested in partnering, have a press enquiry, want to talk about our programmes, or just want to reach a human — this is how.
+    </p>
+  </div>
+</section>
+
+<section class="section animate" aria-labelledby="contact-details-heading">
+  <div class="inner">
+    <div class="contact-grid">
+      <div>
+        <span class="eyebrow">Get in Touch</span>
+        <h2 class="heading-lg" id="contact-details-heading">The simplest way is email.</h2>
+        <div class="divider-cyan"></div>
+        <p class="body-md" style="margin-bottom:var(--s3);">
+          Our general inbox is monitored by the CFK team. We aim to respond within a few working days. If your enquiry is about the Fellowship specifically, the Fellowship team is better reached at the address below.
+        </p>
+
+        <!-- Email protected — assembled by JS -->
+        <div style="margin:var(--s4) 0;">
+          <div style="font-size:12px; font-weight:700; letter-spacing:0.16em; text-transform:uppercase; color:var(--muted); margin-bottom:8px;">General Enquiries</div>
+          <a
+            class="contact-email-display"
+            data-email="hello|careforknowledge.org"
+            href="#"
+            aria-label="Email Care for Knowledge"
+          >[loading…]</a>
+        </div>
+
+        <div style="margin:var(--s4) 0;">
+          <div style="font-size:12px; font-weight:700; letter-spacing:0.16em; text-transform:uppercase; color:var(--muted); margin-bottom:8px;">Fellowship Enquiries</div>
+          <a
+            class="contact-email-display"
+            data-email="fellowship|careforknowledge.org"
+            href="#"
+            style="font-size:16px;"
+            aria-label="Email the CFK Fellowship team"
+          >[loading…]</a>
+        </div>
+
+        {% if site.linkedin %}
+        <div style="margin-top:var(--s4);">
+          <div style="font-size:12px; font-weight:700; letter-spacing:0.16em; text-transform:uppercase; color:var(--muted); margin-bottom:8px;">LinkedIn</div>
+          <a href="{{ site.linkedin }}" target="_blank" rel="noopener" style="font-size:15px; font-weight:600; color:var(--navy); border-bottom:1px solid var(--border); padding-bottom:2px;">Care for Knowledge on LinkedIn →</a>
+        </div>
+        {% endif %}
+      </div>
+
+      <div>
+        <div style="background:var(--navy); padding:48px 40px; height:100%;">
+          <div style="font-size:12px; font-weight:700; letter-spacing:0.16em; text-transform:uppercase; color:var(--cyan); margin-bottom:var(--s4);">What to include in your message</div>
+
+          <div style="display:flex; flex-direction:column; gap:var(--s3);">
+            <div>
+              <div style="font-size:15px; font-weight:700; color:var(--white); margin-bottom:6px;">For partnership enquiries</div>
+              <div style="font-size:14px; color:rgba(255,255,255,0.55); line-height:1.6;">Tell us about your organisation, what kind of partnership you have in mind, and which of our programmes you are most interested in.</div>
+            </div>
+            <div style="border-top:1px solid rgba(255,255,255,0.08); padding-top:var(--s3);">
+              <div style="font-size:15px; font-weight:700; color:var(--white); margin-bottom:6px;">For press &amp; media</div>
+              <div style="font-size:14px; color:rgba(255,255,255,0.55); line-height:1.6;">Include your publication, your deadline, and what you are working on. We are happy to provide quotes and background.</div>
+            </div>
+            <div style="border-top:1px solid rgba(255,255,255,0.08); padding-top:var(--s3);">
+              <div style="font-size:15px; font-weight:700; color:var(--white); margin-bottom:6px;">For Fellowship enquiries</div>
+              <div style="font-size:14px; color:rgba(255,255,255,0.55); line-height:1.6;">First check the Fellowship website at fellowship.careforknowledge.org — most questions are answered there. The Fellowship Companion is especially thorough.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

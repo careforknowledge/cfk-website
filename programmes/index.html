@@ -1,0 +1,47 @@
+---
+layout: default
+title: "Our Programmes"
+description: "Five programmes — open textbooks, past questions, civic simulation, undergraduate publishing, and a volunteer fellowship. One ecosystem, built for Nigerian students."
+og_image: "/assets/images/og/og-programmes.jpg"
+body_class: "page-programmes"
+---
+
+<section class="page-hero" aria-labelledby="programmes-heading">
+  <div class="inner page-hero-content">
+    <span class="eyebrow eyebrow-cyan">Programmes</span>
+    <h1 class="heading-xl light" id="programmes-heading" style="max-width:680px; margin-bottom:24px;">
+      Five programmes.<br><em>One ecosystem.</em>
+    </h1>
+    <p class="body-lg light" style="max-width:520px;">
+      Every CFK programme is designed to stand alone — and to be more valuable alongside the others. Together they form a complete, freely accessible learning infrastructure for Nigerian students.
+    </p>
+  </div>
+</section>
+
+<section class="section animate" aria-labelledby="ecosystem-heading">
+  <div class="inner">
+    <span class="eyebrow">The Ecosystem</span>
+    <h2 class="heading-lg" id="ecosystem-heading" style="max-width:640px;">How the programmes work together.</h2>
+    <p class="body-lg" style="max-width:600px; margin-bottom:var(--s5);">
+      A secondary school student using CTRI textbooks can move directly to WikiQuestions for practice on the same topic — with video explanations at every step. A young Nigerian who participated in Model NASS might become a CFK Fellow. A Fellow who discovers a passion for writing might publish their first essay through First Essays. The programmes reinforce each other.
+    </p>
+    <div class="programmes-grid">
+      {% for prog in site.data.programmes %}
+      <div class="programme-card {% if prog.status == 'development' %}dev{% endif %} animate">
+        <div class="programme-card-icon" aria-hidden="true">{{ prog.icon }}</div>
+        <div class="programme-card-name">{{ prog.name }}</div>
+        <div class="programme-card-tagline">{{ prog.tagline }}</div>
+        <p class="programme-card-desc">{{ prog.description }}</p>
+        <div class="programme-card-footer">
+          <a href="/programmes/{{ prog.slug }}/" class="programme-card-link">Read more →</a>
+          {% if prog.status == 'development' %}
+          <span class="dev-pill">In Development</span>
+          {% elsif prog.url != '' %}
+          <a href="{{ prog.url }}" class="programme-card-link" target="_blank" rel="noopener">Visit site →</a>
+          {% endif %}
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>

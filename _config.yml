@@ -1,0 +1,35 @@
+# ─── Care for Knowledge — Jekyll Configuration ───────────────────────────────
+title: "Care for Knowledge"
+tagline: "Free education for every Nigerian student."
+description: "Care for Knowledge is a Nigerian nonprofit building free educational resources — open textbooks, past questions, civic simulations, and an undergraduate publishing pipeline."
+url: "https://careforknowledge.org"
+baseurl: ""
+
+# Social / contact
+email: "hello@careforknowledge.org"
+twitter_handle: "careforknowledge"
+linkedin: "https://www.linkedin.com/company/careforknowledge"
+
+# OG / social defaults
+og_image: "/assets/images/og/og-default.jpg"   # 1200×630 px
+og_locale: "en_NG"
+
+# Collections
+collections:
+  pages:
+    output: true
+    permalink: /:name/
+
+# Build
+markdown: kramdown
+highlighter: rouge
+permalink: /:title/
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+
+# Plugins
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap

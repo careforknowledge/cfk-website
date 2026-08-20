@@ -1,0 +1,149 @@
+---
+layout: default
+title: "Free Education for Every Nigerian Student"
+description: "Care for Knowledge is a Nigerian nonprofit building free open textbooks, past question databases, civic simulations, and publishing pipelines for young Nigerians."
+og_image: "/assets/images/og/og-home.jpg"
+body_class: "page-home"
+---
+
+<section class="hero" aria-labelledby="hero-heading">
+  <div class="hero-bg" style="background-image: url('/assets/images/hero-home.jpg');" role="presentation" aria-hidden="true"></div>
+  <div class="hero-overlay" aria-hidden="true"></div>
+  <div class="hero-content">
+    <div class="inner">
+      <div class="hero-eyebrow">Care for Knowledge — Nigeria</div>
+      <h1 class="heading-xl light" id="hero-heading" style="margin-bottom:24px;">
+        Free education<br>for <em>every</em> Nigerian student.
+      </h1>
+      <p class="body-lg light" style="max-width:520px; margin-bottom:0;">
+        We build open textbooks, past question databases, civic simulations, and publishing pipelines — free, contextualised, and built by young Nigerians, for young Nigerians.
+      </p>
+      <div class="hero-ctas">
+        <a href="/programmes/" class="btn btn-cyan">Our Programmes</a>
+        <a href="/get-involved/" class="btn-ghost">Get Involved</a>
+      </div>
+      <div class="hero-stats" role="list" aria-label="CFK at a glance">
+        <div class="hero-stat" role="listitem">
+          <div class="hero-stat-num" data-count="5">0</div>
+          <div class="hero-stat-label">Programmes</div>
+        </div>
+        <div class="hero-stat" role="listitem">
+          <div class="hero-stat-num" data-count="7">0</div>
+          <div class="hero-stat-label">Team Members</div>
+        </div>
+        <div class="hero-stat" role="listitem">
+          <div class="hero-stat-num" data-count="2">0</div>
+          <div class="hero-stat-label">Sprints Run</div>
+        </div>
+        <div class="hero-stat" role="listitem">
+          <div class="hero-stat-num" data-count="35">0</div>
+          <div class="hero-stat-label">Past Questions Digitised</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- IMAGE NOTE: hero-home.jpg — wide landscape photo of young Nigerians studying, collaborating, or in a classroom. Warm and human. 1920×1080px minimum. -->
+
+<div class="ticker" aria-hidden="true">
+  <div class="ticker-track">
+    <span class="ticker-item">Open Textbooks</span><span class="ticker-sep">✦</span>
+    <span class="ticker-item">Past Questions</span><span class="ticker-sep">✦</span>
+    <span class="ticker-item">Civic Simulation</span><span class="ticker-sep">✦</span>
+    <span class="ticker-item">Undergraduate Publishing</span><span class="ticker-sep">✦</span>
+    <span class="ticker-item">Volunteer Fellowship</span><span class="ticker-sep">✦</span>
+    <span class="ticker-item">Open Textbooks</span><span class="ticker-sep">✦</span>
+    <span class="ticker-item">Past Questions</span><span class="ticker-sep">✦</span>
+    <span class="ticker-item">Civic Simulation</span><span class="ticker-sep">✦</span>
+    <span class="ticker-item">Undergraduate Publishing</span><span class="ticker-sep">✦</span>
+    <span class="ticker-item">Volunteer Fellowship</span><span class="ticker-sep">✦</span>
+  </div>
+</div>
+
+<!-- Mission -->
+<section class="section animate" aria-labelledby="mission-heading">
+  <div class="inner">
+    <span class="eyebrow">Our Mission</span>
+    <h2 class="heading-lg" id="mission-heading" style="max-width:720px;">
+      Quality education and skills training — regardless of location, income, or background.
+    </h2>
+    <p class="body-lg" style="max-width:600px; margin-bottom:var(--s5);">
+      CFK is a Nigerian nonprofit founded on the belief that the barriers between a student and a good education are not natural. They are built. And they can be dismantled — one open textbook, one free past question, one well-run simulation at a time.
+    </p>
+    <a href="/about/" class="btn btn-navy">About Care for Knowledge</a>
+  </div>
+</section>
+
+<!-- Programmes -->
+<section class="section section-off animate" aria-labelledby="programmes-heading">
+  <div class="inner">
+    <span class="eyebrow">What We Build</span>
+    <h2 class="heading-lg" id="programmes-heading">Five programmes. One ecosystem.</h2>
+    <p class="body-lg" style="max-width:580px;">
+      Every CFK programme is designed to stand alone — and to be more valuable alongside the others.
+    </p>
+    <div class="programmes-grid">
+      {% for prog in site.data.programmes %}
+      <div class="programme-card {% if prog.status == 'development' %}dev{% endif %} animate animate-delay-{{ forloop.index }}">
+        <div class="programme-card-icon" aria-hidden="true">{{ prog.icon }}</div>
+        <div class="programme-card-name">{{ prog.name }}</div>
+        <div class="programme-card-tagline">{{ prog.tagline }}</div>
+        <p class="programme-card-desc">{{ prog.description }}</p>
+        <div class="programme-card-footer">
+          <a href="/programmes/{{ prog.slug }}/" class="programme-card-link">Learn more →</a>
+          {% if prog.status == 'development' %}
+          <span class="dev-pill">In Development</span>
+          {% elsif prog.url != '' %}
+          <a href="{{ prog.url }}" class="programme-card-link" target="_blank" rel="noopener" aria-label="Visit {{ prog.name }} website">Visit site →</a>
+          {% endif %}
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- Sprints -->
+<section class="section section-dark animate" aria-labelledby="sprints-home-heading">
+  <div class="inner">
+    <span class="eyebrow eyebrow-cyan">CFK Sprints</span>
+    <h2 class="heading-lg light" id="sprints-home-heading" style="max-width:600px;">
+      Full-day sessions where we build together.
+    </h2>
+    <p class="body-lg light" style="max-width:540px; margin-bottom:var(--s5);">
+      CFK Sprints bring Fellows and interested volunteers together for a day of focused work — digitising past questions, writing textbook chapters, and moving the programmes forward. Two done. More coming.
+    </p>
+    <a href="/sprints/" class="btn btn-cyan">About Sprints</a>
+  </div>
+</section>
+
+<!-- Photo band -->
+<div class="photo-band" role="presentation">
+  <img src="/assets/images/band-fellows.jpg" alt="CFK Fellows at a Sprint session in Osogbo" loading="lazy">
+  <div class="photo-band-overlay">
+    <div class="photo-band-text">Built by young Nigerians.<br><span>For every student.</span></div>
+  </div>
+</div>
+<!-- IMAGE NOTE: band-fellows.jpg — photo of a Sprint or CFK team working together. 1920×600px. -->
+
+<!-- CTA -->
+<section class="cta-section animate" aria-labelledby="cta-heading">
+  <div class="cta-inner">
+    <span class="eyebrow eyebrow-cyan" style="display:flex;align-items:center;justify-content:center;gap:12px;">
+      <span style="display:block;width:24px;height:1px;background:var(--cyan);opacity:0.4;"></span>
+      Get Involved
+      <span style="display:block;width:24px;height:1px;background:var(--cyan);opacity:0.4;"></span>
+    </span>
+    <h2 class="heading-lg light" id="cta-heading" style="margin-bottom:16px;">
+      There is a place for you here.
+    </h2>
+    <p class="body-lg light" style="margin-bottom:var(--s5);">
+      Whether you want to volunteer, donate, or partner — CFK is a community you can contribute to in a way that fits your life.
+    </p>
+    <div style="display:flex;gap:var(--s3);justify-content:center;flex-wrap:wrap;">
+      <a href="/get-involved/" class="btn btn-cyan">Get Involved</a>
+      <a href="/donate/" class="btn btn-outline">Donate</a>
+    </div>
+  </div>
+</section>

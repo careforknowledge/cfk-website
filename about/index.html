@@ -1,0 +1,147 @@
+---
+layout: default
+title: "About"
+description: "Care for Knowledge is a Nigerian nonprofit building free educational resources for students who deserve better. Learn about our mission, our team, and why we do this work."
+og_image: "/assets/images/og/og-about.jpg"
+body_class: "page-about"
+---
+
+<section class="page-hero" aria-labelledby="about-heading">
+  <div class="inner page-hero-content">
+    <span class="eyebrow eyebrow-cyan">About Us</span>
+    <h1 class="heading-xl light" id="about-heading" style="max-width:700px; margin-bottom:24px;">
+      We build what should have existed already.
+    </h1>
+    <p class="body-lg light" style="max-width:560px;">
+      Care for Knowledge is a Nigerian nonprofit. Our mission is universal access to quality education and skills training — regardless of location, income, or background.
+    </p>
+  </div>
+</section>
+
+<!-- Origin -->
+<section class="section animate" aria-labelledby="origin-heading">
+  <div class="inner">
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:var(--s6); align-items:start;">
+      <div>
+        <span class="eyebrow">Who We Are</span>
+        <h2 class="heading-lg" id="origin-heading">A nonprofit built on a simple conviction.</h2>
+        <div class="divider-cyan"></div>
+        <p class="body-md" style="margin-bottom:var(--s3);">
+          Care for Knowledge was founded on the observation that the barriers between Nigerian students and a quality education are not natural. They are built — by cost, by geography, by the absence of materials that speak their context, by systems that were never designed to include them.
+        </p>
+        <p class="body-md" style="margin-bottom:var(--s3);">
+          CFK exists to dismantle those barriers. We write free textbooks. We digitise and explain past questions. We run civic simulations that teach young Nigerians how governance actually works. We publish undergraduate essays. We build communities of volunteers who do this work together, for the long term.
+        </p>
+        <p class="body-md">
+          None of this is fast. None of it is easy. But all of it is necessary — and we have chosen to do it.
+        </p>
+      </div>
+      <div style="background:var(--navy); padding:48px 40px;">
+        <div style="font-size:11px; font-weight:700; letter-spacing:0.2em; text-transform:uppercase; color:var(--cyan); margin-bottom:var(--s3);">Our Vision</div>
+        <p style="font-size:22px; font-weight:800; color:var(--white); line-height:1.3; margin-bottom:var(--s4);">
+          A world where every student has the resources they need to learn — regardless of where they were born or what their family can afford.
+        </p>
+        <div style="font-size:11px; font-weight:700; letter-spacing:0.2em; text-transform:uppercase; color:var(--pink); margin-bottom:var(--s2);">Our Values</div>
+        <div style="display:flex; flex-direction:column; gap:12px;">
+          <div style="font-size:14px; color:rgba(255,255,255,0.7);">✦ &nbsp;Open by default — everything we build is free</div>
+          <div style="font-size:14px; color:rgba(255,255,255,0.7);">✦ &nbsp;Contextualised — built for Nigeria, not adapted for it</div>
+          <div style="font-size:14px; color:rgba(255,255,255,0.7);">✦ &nbsp;Community — we build with people, not for them</div>
+          <div style="font-size:14px; color:rgba(255,255,255,0.7);">✦ &nbsp;Honest — about where we are and how far we have to go</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Executive Team -->
+<section class="section section-off animate" id="team" aria-labelledby="team-heading">
+  <div class="inner">
+    <span class="eyebrow">The People</span>
+    <h2 class="heading-lg" id="team-heading">Executive Team</h2>
+    <p class="body-lg" style="max-width:560px; margin-bottom:var(--s2);">
+      CFK's executive team is the CFK Fellowship's leadership layer — every team member is an active Fellow, contributing to the programmes they help run.
+    </p>
+    <div class="team-grid">
+      {% for member in site.data.team.executive %}
+      <div class="team-card animate animate-delay-{{ forloop.index }}">
+        {% if member.photo != '' %}
+        <img
+          class="team-photo"
+          src="/assets/images/team/{{ member.photo }}"
+          alt="Photo of {{ member.name }}"
+          loading="lazy"
+          onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+        >
+        {% endif %}
+        <div class="team-photo-placeholder" {% if member.photo != '' %}style="display:none;"{% endif %} aria-hidden="true">
+          {{ member.name | split: ' ' | first | slice: 0 }}{{ member.name | split: ' ' | last | slice: 0 }}
+        </div>
+        <div class="team-name">{{ member.name }}</div>
+        <div class="team-role">{{ member.role }}</div>
+        {% if member.fellowship_level %}
+        <div class="team-level">{{ member.fellowship_level }}</div>
+        {% endif %}
+        {% for prog in member.programmes %}
+        <div style="font-size:12px; color:var(--muted); margin-bottom:4px;">{{ prog }}</div>
+        {% endfor %}
+        {% if member.linkedin %}
+        <a href="{{ member.linkedin }}" class="team-linkedin" target="_blank" rel="noopener" aria-label="LinkedIn profile of {{ member.name }}">LinkedIn →</a>
+        {% endif %}
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- Board -->
+<section class="section animate" id="board" aria-labelledby="board-heading">
+  <div class="inner">
+    <span class="eyebrow">Governance</span>
+    <h2 class="heading-lg" id="board-heading">Board of Directors</h2>
+    <div class="board-grid">
+      {% for member in site.data.team.board %}
+      <div class="team-card animate">
+        {% if member.photo != '' %}
+        <img
+          class="team-photo"
+          src="/assets/images/team/{{ member.photo }}"
+          alt="Photo of {{ member.name }}"
+          loading="lazy"
+          onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+        >
+        {% endif %}
+        <div class="team-photo-placeholder" {% if member.photo != '' %}style="display:none;"{% endif %} aria-hidden="true">
+          {{ member.name | split: ' ' | last | slice: 0 }}
+        </div>
+        <div class="team-name">{{ member.name }}</div>
+        <div class="team-role">{{ member.role }}</div>
+        {% if member.linkedin %}
+        <a href="{{ member.linkedin }}" class="team-linkedin" target="_blank" rel="noopener" aria-label="LinkedIn profile of {{ member.name }}">LinkedIn →</a>
+        {% endif %}
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section animate" aria-labelledby="about-cta-heading">
+  <div class="cta-inner">
+    <span class="eyebrow eyebrow-cyan" style="display:flex;align-items:center;justify-content:center;gap:12px;">
+      <span style="display:block;width:24px;height:1px;background:var(--cyan);opacity:0.4;"></span>Join Us<span style="display:block;width:24px;height:1px;background:var(--cyan);opacity:0.4;"></span>
+    </span>
+    <h2 class="heading-lg light" id="about-cta-heading" style="margin-bottom:16px;">Work that matters. People who care.</h2>
+    <p class="body-lg light" style="margin-bottom:var(--s5);">The CFK Fellowship is open to young Nigerians who want to contribute to something long-term and meaningful.</p>
+    <div style="display:flex;gap:var(--s3);justify-content:center;flex-wrap:wrap;">
+      <a href="https://fellowship.careforknowledge.org" class="btn btn-cyan" target="_blank" rel="noopener">Fellowship Site</a>
+      <a href="/get-involved/" class="btn btn-outline">Other ways to help</a>
+    </div>
+  </div>
+</section>
+
+<!-- IMAGE NOTES:
+  og-about.jpg — 1200×630px OG image for this page
+  team/ folder — headshots named as listed in _data/team.yml
+    Recommended: square crop, 400×400px minimum, professional/warm
+    People without photos will show initials placeholder automatically
+-->
