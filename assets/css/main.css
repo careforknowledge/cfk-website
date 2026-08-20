@@ -180,6 +180,11 @@ body {
   align-items: center;
   gap: var(--s5);
 }
+.nav-logo img {
+  height: 36px;
+  width: auto;
+  display: block;
+}
 .nav-menu a {
   font-size: 14px;
   font-weight: 600;
@@ -574,6 +579,11 @@ main { padding-top: 64px; }
 .footer-col a:hover { color: var(--white); }
 .footer-bottom {
   border-top: 1px solid rgba(255,255,255,0.06);
+}
+.footer-logo img {
+  height: 40px;
+  width: auto;
+  display: block;
 }
 .footer-bottom .footer-inner {
   grid-template-columns: 1fr 1fr;
