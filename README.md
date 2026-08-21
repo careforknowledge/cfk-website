@@ -99,6 +99,7 @@ Name exactly as listed in `_data/team.yml`:
 - cornelius-aboderin.jpg
 - enoch-agboola.jpg
 - ayodeji-oke.jpg
+- kehinde-oketola.jpg
 
 People without photos automatically show initials placeholder.
 
