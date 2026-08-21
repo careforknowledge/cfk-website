@@ -67,7 +67,7 @@ Current links:
 
 ### Update Sprint notify form link
 Edit `sprints/index.html` — replace `https://forms.google.com/SPRINT_NOTIFY_FORM`
-with your actual Google Form URL.
+with your actual Google Form URL. (https://docs.google.com/forms/d/e/1FAIpQLScOkvTthNLYu12kaT1UoUlKI0lEnFkg1pMDI0u4QYlS851lCw/viewform?usp=dialog)
 
 ### Change nav links or footer links
 Edit `_includes/nav.html` and `_includes/footer.html`.
