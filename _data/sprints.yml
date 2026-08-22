@@ -15,6 +15,7 @@
     # Add photo filenames here after the Sprint, e.g.:
     - s1-01.jpg
     - s1-02.jpg
+    - s1-03.jpg
   report:
     # Uncomment and set path when report is ready, e.g.:
     # path: /assets/reports/cfk-sprint-1-report.pdf
