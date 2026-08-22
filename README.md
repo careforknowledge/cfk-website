@@ -65,9 +65,49 @@ Current links:
 - One-time: https://paystack.shop/pay/donatetocfk
 - Recurring: https://paystack.shop/pay/recurringcfk
 
-### Update Sprint notify form link
-Edit `sprints/index.html` — replace `https://forms.google.com/SPRINT_NOTIFY_FORM`
-with your actual Google Form URL. (https://docs.google.com/forms/d/e/1FAIpQLScOkvTthNLYu12kaT1UoUlKI0lEnFkg1pMDI0u4QYlS851lCw/viewform?usp=dialog)
+### Add a new Sprint to the Sprints page
+Edit `_data/sprints.yml` — add a new entry to the bottom of the file:
+
+```yaml
+- number: 3
+  date: "14 September 2026"
+  location: "Osogbo, Osun State"
+  virtual: true
+  status: upcoming        # change to: done   after the Sprint runs
+  description: "One or two sentences summarising what happened. Write after the Sprint."
+  stats:
+    - value: "—"
+      label: "Past questions digitised"
+    - value: "1 day"
+      label: "Duration"
+  photos:
+    # - s3-01.jpg         # uncomment and add filenames after the Sprint
+  report:
+    # path: /assets/reports/cfk-sprint-3-report.pdf
+    # label: "Download Sprint 3 Report"
+```
+
+The Sprints page re-renders automatically. The most recent Sprint opens by default.
+
+### Add photos to a Sprint
+Place image files in `assets/images/sprints/`.
+Then uncomment and add the filenames to the `photos` list in `_data/sprints.yml`:
+```yaml
+photos:
+  - s3-01.jpg
+  - s3-02.jpg
+```
+Recommended: 4–6 photos per Sprint, landscape crop, 1200×900px minimum.
+
+### Add a Sprint report (PDF)
+Place the PDF in `assets/reports/`.
+Then uncomment and fill in the `report` block in `_data/sprints.yml`:
+```yaml
+report:
+  path: /assets/reports/cfk-sprint-3-report.pdf
+  label: "Download Sprint 3 Report"
+```
+A download button appears on the Sprint card automatically.
 
 ### Change nav links or footer links
 Edit `_includes/nav.html` and `_includes/footer.html`.
@@ -99,7 +139,6 @@ Name exactly as listed in `_data/team.yml`:
 - cornelius-aboderin.jpg
 - enoch-agboola.jpg
 - ayodeji-oke.jpg
-- kehinde-oketola.jpg
 
 People without photos automatically show initials placeholder.
 

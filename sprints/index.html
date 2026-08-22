@@ -19,7 +19,7 @@ body_class: "page-sprints"
   </div>
 </section>
 
-<!-- What is a sprint -->
+<!-- What is a Sprint -->
 <section class="section animate" aria-labelledby="sprint-what-heading">
   <div class="inner">
     <span class="eyebrow">What Is a Sprint?</span>
@@ -33,45 +33,104 @@ body_class: "page-sprints"
           Sprints are not closed to Fellows only. Any interested volunteer with the tools and the commitment to contribute for a full day is welcome. Bring a laptop. Bring focus. Leave having made something that will be used by students who need it.
         </p>
         <p class="body-md">
-          Sprints have a physical presence — we have hosted in Osogbo, Osun State — and virtual participation for those who can't be there in person.
+          Sprints have a physical presence — we host in Osogbo, Osun State — and virtual participation is available for those who cannot be there in person.
         </p>
       </div>
       <div>
         <div class="card-grid-2" style="gap:var(--s2); grid-template-columns:1fr;">
           <div class="info-card"><div class="info-card-title">What you'll do</div><div class="info-card-body">Digitise past questions, write textbook chapters, review and edit content, or support the day's logistics — depending on where you can contribute most.</div></div>
           <div class="info-card"><div class="info-card-title">What you'll need</div><div class="info-card-body">A working laptop is a firm requirement for most Sprint activities. A willingness to focus for a full day. No prior experience with CFK required.</div></div>
-          <div class="info-card"><div class="info-card-title">Physical &amp; virtual</div><div class="info-card-body">Sprints have a physical location — Osun State has been home to both Sprints so far. Virtual participation is available for those who cannot attend in person.</div></div>
+          <div class="info-card"><div class="info-card-title">Physical &amp; virtual</div><div class="info-card-body">Sprints are hosted in Osogbo, Osun State. Virtual participation is available for those who cannot attend in person.</div></div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- Past sprints -->
-<section class="section section-dark animate" aria-labelledby="past-sprints-heading">
+<!-- Sprint Record -->
+<section class="section section-dark animate" aria-labelledby="sprint-record-heading">
   <div class="inner">
-    <span class="eyebrow eyebrow-cyan">Past Sprints</span>
-    <h2 class="heading-lg light" id="past-sprints-heading">Two done. More coming.</h2>
-    <p class="body-lg light" style="max-width:540px; margin-bottom:var(--s5);">
-      Both Sprints held so far took place in Osogbo, Osun State — with virtual participants joining from elsewhere in Nigeria.
+    <span class="eyebrow eyebrow-cyan">Sprint Record</span>
+    <h2 class="heading-lg light" id="sprint-record-heading">Every Sprint, documented.</h2>
+    <p class="body-lg light" style="max-width:580px; margin-bottom:var(--s5);">
+      Each Sprint produces a public record — what was built, who showed up, and what it means for the students who will use it.
     </p>
 
-    <div class="sprint-card animate">
-      <div class="sprint-date">Sprint 1 — 6 June 2026</div>
-      <div class="sprint-name">WikiQuestions &amp; CTRI Sprint — Osogbo</div>
-      <div class="sprint-location">📍 Osogbo, Osun State &nbsp;·&nbsp; + Virtual Participants</div>
-      <div class="sprint-stat">
-        <strong>35+</strong> WAEC past questions digitised &nbsp;·&nbsp;
-        <strong>Biology, Chemistry &amp; Mathematics</strong> chapters started
-      </div>
-    </div>
+    {% assign sprints_desc = site.data.sprints | sort: "number" | reverse %}
+    {% for sprint in sprints_desc %}
+    <details class="sprint-record animate" {% if forloop.first %}open{% endif %}>
+      <summary class="sprint-record-header">
+        <div class="sprint-record-meta">
+          <div class="sprint-record-number">Sprint {{ sprint.number }}</div>
+          <div class="sprint-record-title">WikiQuestions &amp; CTRI Sprint — {{ sprint.location | split: "," | first }}</div>
+          <div class="sprint-record-date-loc">
+            {{ sprint.date }} &nbsp;·&nbsp;
+            📍 {{ sprint.location }}
+            {% if sprint.virtual %}&nbsp;·&nbsp; + Virtual{% endif %}
+          </div>
+        </div>
+        <div class="sprint-record-right">
+          {% if sprint.status == "done" %}
+          <span class="sprint-record-badge badge-done">Completed</span>
+          {% else %}
+          <span class="sprint-record-badge badge-upcoming">Upcoming</span>
+          {% endif %}
+          <span class="sprint-toggle-icon">▾</span>
+        </div>
+      </summary>
 
-    <div class="sprint-card animate">
-      <div class="sprint-date">Sprint 2 — 11 July 2026</div>
-      <div class="sprint-name">WikiQuestions &amp; CTRI Sprint — Osogbo</div>
-      <div class="sprint-location">📍 Osogbo, Osun State &nbsp;·&nbsp; + Virtual Participants</div>
-      <div class="sprint-stat">Continued digitisation and textbook chapter development across subjects.</div>
-    </div>
+      <div class="sprint-record-body">
+        {% if sprint.status == "upcoming" %}
+        <div class="sprint-upcoming-inner">
+          Details for this Sprint will be published here when announced.<br>
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLScOkvTthNLYu12kaT1UoUlKI0lEnFkg1pMDI0u4QYlS851lCw/viewform?usp=dialog" target="_blank" rel="noopener" style="color:var(--cyan);">Get notified when it's confirmed →</a>
+        </div>
+        {% else %}
+
+        <!-- Stats -->
+        {% if sprint.stats %}
+        <div class="sprint-stats-row">
+          {% for stat in sprint.stats %}
+          <div class="sprint-stat-box">
+            <div class="sprint-stat-box-value">{{ stat.value }}</div>
+            <div class="sprint-stat-box-label">{{ stat.label }}</div>
+          </div>
+          {% endfor %}
+        </div>
+        {% endif %}
+
+        <!-- Description -->
+        <p style="font-size:14px;line-height:1.75;color:rgba(255,255,255,0.6);margin-bottom:var(--s3);">{{ sprint.description }}</p>
+
+        <!-- Photos -->
+        <div class="sprint-photos">
+          {% if sprint.photos %}
+            {% for photo in sprint.photos %}
+            <div class="sprint-photo">
+              <img src="/assets/images/sprints/{{ photo }}" alt="Sprint {{ sprint.number }} photo" loading="lazy">
+            </div>
+            {% endfor %}
+          {% else %}
+            <div class="sprint-photo"><div class="sprint-photo-placeholder">Photos coming soon</div></div>
+            <div class="sprint-photo"><div class="sprint-photo-placeholder">Photos coming soon</div></div>
+            <div class="sprint-photo"><div class="sprint-photo-placeholder">Photos coming soon</div></div>
+          {% endif %}
+        </div>
+
+        <!-- Report -->
+        <div class="sprint-actions">
+          {% if sprint.report.path %}
+          <a href="{{ sprint.report.path }}" class="btn btn-sm" download>{{ sprint.report.label }} ↓</a>
+          {% else %}
+          <span class="sprint-note">Report will be published here when available.</span>
+          {% endif %}
+        </div>
+
+        {% endif %}
+      </div>
+    </details>
+    {% endfor %}
+
   </div>
 </section>
 
@@ -87,7 +146,7 @@ body_class: "page-sprints"
       Be there when we build.
     </h2>
     <p class="body-lg light" style="margin-bottom:var(--s5);">
-      Sprints are open to anyone with the tools and the intention to contribute. Leave your details below and we will notify you when the next Sprint is announced — before we post about it anywhere else.
+      Sprints are open to anyone with the tools and the intention to contribute. Leave your details and we will notify you when the next Sprint is announced — before we post about it anywhere else.
     </p>
     <a href="https://docs.google.com/forms/d/e/1FAIpQLScOkvTthNLYu12kaT1UoUlKI0lEnFkg1pMDI0u4QYlS851lCw/viewform?usp=dialog" class="btn btn-cyan" target="_blank" rel="noopener">Notify Me of Upcoming Sprints</a>
     <p style="font-size:13px;color:rgba(255,255,255,0.3);margin-top:var(--s4);">
@@ -97,3 +156,142 @@ body_class: "page-sprints"
 </section>
 
 <!-- IMAGE NOTE: og-sprints.jpg — 1200×630px. Photo from one of the Sprint sessions if available. -->
+
+<style>
+.sprint-record {
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 12px;
+  margin-bottom: var(--s4);
+  overflow: hidden;
+  background: rgba(255,255,255,0.03);
+}
+.sprint-record[open] .sprint-toggle-icon { transform: rotate(180deg); }
+.sprint-record-header {
+  padding: var(--s4);
+  cursor: pointer;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--s3);
+  list-style: none;
+}
+.sprint-record-header::-webkit-details-marker { display: none; }
+.sprint-record-header:hover { background: rgba(255,255,255,0.03); }
+.sprint-record-meta { flex: 1; }
+.sprint-record-number {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--cyan);
+  margin-bottom: 6px;
+}
+.sprint-record-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 8px;
+  line-height: 1.3;
+}
+.sprint-record-date-loc {
+  font-size: 13px;
+  color: rgba(255,255,255,0.45);
+}
+.sprint-record-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 8px;
+  flex-shrink: 0;
+}
+.sprint-record-badge {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+.badge-done { background: rgba(56,189,148,0.12); color: #38bd94; border: 1px solid rgba(56,189,148,0.2); }
+.badge-upcoming { background: rgba(100,160,255,0.1); color: #64a0ff; border: 1px solid rgba(100,160,255,0.2); }
+.sprint-toggle-icon {
+  font-size: 18px;
+  color: rgba(255,255,255,0.3);
+  transition: transform 0.2s;
+}
+.sprint-record-body {
+  padding: 0 var(--s4) var(--s4);
+  border-top: 1px solid rgba(255,255,255,0.06);
+}
+.sprint-stats-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s3);
+  margin: var(--s4) 0;
+}
+.sprint-stat-box {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 8px;
+  padding: 14px 20px;
+  min-width: 140px;
+}
+.sprint-stat-box-value {
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--cyan);
+  line-height: 1;
+  margin-bottom: 4px;
+}
+.sprint-stat-box-label {
+  font-size: 12px;
+  color: rgba(255,255,255,0.45);
+  line-height: 1.4;
+}
+.sprint-photos {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 10px;
+  margin: var(--s4) 0;
+}
+.sprint-photo {
+  aspect-ratio: 4/3;
+  border-radius: 8px;
+  overflow: hidden;
+  background: rgba(255,255,255,0.05);
+}
+.sprint-photo img {
+  width: 100%; height: 100%;
+  object-fit: cover; display: block;
+}
+.sprint-photo-placeholder {
+  width: 100%; height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  color: rgba(255,255,255,0.2);
+  text-align: center;
+  padding: 12px;
+}
+.sprint-actions {
+  display: flex;
+  gap: var(--s2);
+  flex-wrap: wrap;
+  margin-top: var(--s3);
+}
+.sprint-note {
+  font-size: 13px;
+  color: rgba(255,255,255,0.35);
+  font-style: italic;
+  margin-top: var(--s3);
+}
+.sprint-upcoming-inner {
+  padding: var(--s4) 0;
+  color: rgba(255,255,255,0.4);
+  font-size: 14px;
+  line-height: 1.7;
+}
+</style>

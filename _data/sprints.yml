@@ -1,0 +1,45 @@
+- number: 1
+  date: "6 June 2026"
+  location: "Osogbo, Osun State"
+  virtual: true
+  status: done
+  description: "The first CFK Sprint brought Fellows and volunteers together for a full day of work on WikiQuestions and CTRI. Past questions were digitised across core WAEC subjects and textbook chapters were started from scratch."
+  stats:
+    - value: "10"
+      label: "Past questions digitised"
+    - value: "3"
+      label: "CTRI chapters started"
+    - value: "1 day"
+      label: "Duration"
+  photos:
+    # Add photo filenames here after the Sprint, e.g.:
+    - s1-01.jpg
+    - s1-02.jpg
+  report:
+    # Uncomment and set path when report is ready, e.g.:
+    # path: /assets/reports/cfk-sprint-1-report.pdf
+    # label: "Download Sprint 1 Report"
+
+- number: 2
+  date: "11 July 2026"
+  location: "Osogbo, Osun State"
+  virtual: true
+  status: done
+  description: "Sprint 2 continued the digitisation push begun in Sprint 1, expanding to additional subjects and progressing textbook chapter development across multiple CTRI workstreams."
+  stats:
+    - value: "25"
+      label: "Past questions digitised (to be updated)"
+    - value: "1 day"
+      label: "Duration"
+  photos:
+    # Add photo filenames here, e.g.:
+    - s2-01.jpg
+    - s2-02.jpg
+    - s2-03.jpg
+    - s2-04.jpg
+    - s2-05.jpg
+    - s2-06.jpg
+  report:
+    # Uncomment and set path when report is ready, e.g.:
+    # path: /assets/reports/cfk-sprint-2-report.pdf
+    # label: "Download Sprint 2 Report"
