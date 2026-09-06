@@ -26,42 +26,42 @@ executive:
   - name: "Joshua Olunlade"
     role: "Executive Director"
     fellowship_level: "Senior Fellow"
-    programmes: ["Program Coordinator, CFK Fellowship"]
+    # programmes: ["Program Coordinator, CFK Fellowship"]
     fellow_slug: "joshua-olunlade"
     photo: ""
   - name: "Israel Oladejo"
     role: "Recruitment, Marketing & Communications Lead"
     fellowship_level: "Senior Fellow"
-    programmes: []
+    # programmes: []
     fellow_slug: "israel-oladejo"
     photo: ""
   - name: "Peace Oyegbola"
     role: "Administrative Lead"
     fellowship_level: "Associate Fellow"
-    programmes: []
+    # programmes: []
     fellow_slug: "peace-oyegbola"
     photo: ""
   - name: "Emmanuel Ogunniyi"
     role: "Capacity Development Lead"
     fellowship_level: "Associate Fellow"
-    programmes: ["Program Coordinator, Model NASS"]
+    # programmes: ["Program Coordinator, Model NASS"]
     fellow_slug: "emmanuel-ogunniyi"
     photo: ""
   - name: "Janet Fasoro"
     role: "Finance & Fundraising Lead"
     fellowship_level: "Associate Fellow"
-    programmes: []
+    # programmes: []
     fellow_slug: "janet-fasoro"
     photo: ""
   - name: "Cornelius Aboderin"
     role: "Program Coordinator, CTRI"
     fellowship_level: "Senior Fellow"
-    programmes: []
+    # programmes: []
     fellow_slug: "cornelius-aboderin"
     photo: ""
   - name: "Enoch Agboola"
     role: "Program Coordinator, WikiQuestions"
     fellowship_level: "Associate Fellow"
-    programmes: []
+    # programmes: []
     fellow_slug: "enoch-agboola"
     photo: ""
