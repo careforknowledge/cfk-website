@@ -66,17 +66,27 @@ body_class: "page-about"
     </p>
     <div class="team-grid">
       {% for member in site.data.team.executive %}
+      {% if member.fellow_slug and member.fellow_slug != "" %}
+        {% assign member_photo = "https://fellowship.careforknowledge.org/assets/images/fellows/" | append: member.fellow_slug | append: ".jpg" %}
+        {% assign member_link  = "https://fellowship.careforknowledge.org/fellows/" | append: member.fellow_slug | append: "/" %}
+        {% assign link_label   = "Fellowship Profile →" %}
+        {% assign has_photo    = true %}
+      {% else %}
+        {% assign member_photo = "/assets/images/team/" | append: member.photo %}
+        {% assign member_link  = member.linkedin %}
+        {% assign link_label   = "LinkedIn →" %}
+        {% assign has_photo    = member.photo != "" %}
+      {% endif %}
       <div class="team-card animate animate-delay-{{ forloop.index }}">
-        {% if member.photo != '' %}
+        {% if has_photo %}
         <img
           class="team-photo"
-          src="/assets/images/team/{{ member.photo }}"
+          src="{{ member_photo }}"
           alt="Photo of {{ member.name }}"
-          loading="lazy"
-          onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+          onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
         >
         {% endif %}
-        <div class="team-photo-placeholder" {% if member.photo != '' %}style="display:none;"{% endif %} aria-hidden="true">
+        <div class="team-photo-placeholder" {% if has_photo %}style="display:none;"{% endif %} aria-hidden="true">
           {{ member.name | split: ' ' | first | slice: 0 }}{{ member.name | split: ' ' | last | slice: 0 }}
         </div>
         <div class="team-name">{{ member.name }}</div>
@@ -85,10 +95,11 @@ body_class: "page-about"
         <div class="team-level">{{ member.fellowship_level }}</div>
         {% endif %}
         {% for prog in member.programmes %}
-        <div style="font-size:12px; color:var(--muted); margin-bottom:4px;">{{ prog }}</div>
+        <div class="team-prog">{{ prog }}</div>
         {% endfor %}
-        {% if member.linkedin %}
-        <a href="{{ member.linkedin }}" class="team-linkedin" target="_blank" rel="noopener" aria-label="LinkedIn profile of {{ member.name }}">LinkedIn →</a>
+        {% if member_link and member_link != "" %}
+        <a href="{{ member_link }}" class="team-linkedin" target="_blank" rel="noopener"
+           aria-label="{{ link_label }} {{ member.name }}">{{ link_label }}</a>
         {% endif %}
       </div>
       {% endfor %}
